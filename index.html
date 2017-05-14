@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = ''>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular Gmail</title>
+    </head>
+    <body>
+        <div>test</div>
+        <div ng-controller="TestCtrl"><h1>{{title}}</h1>
+           <input type="text" ng-model="title">
+        </div>
+        <script
+  src="https://code.jquery.com/jquery-1.11.1.js"
+  integrity="sha256-MCmDSoIMecFUw3f1LicZ/D/yonYAoHrgiep/3pCH9rw="
+  crossorigin="anonymous"></script>
+        <script src="lib/angular.js"></script>
+        <script src="lib/angular-route.js"></script>
+        <script>
+            $(function() {
+                console.log("jQuery loaded")
+            });
+
+            function TestCtrl($scope) {
+              $scope.title = 'Write a title here...';
+           };
+
+           var app = angular.module('app', [
+            'ngRoute'
+            ]);
+
+           console.log(app)
+        </script>
+    </body>
+</html>
