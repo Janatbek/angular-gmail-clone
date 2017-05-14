@@ -28,7 +28,23 @@
             'ngRoute'
             ]);
 
-           console.log(app)
+           app.config(function ($routeProvider) {
+               /* Now we can use the routeProvider! :D */
+               $routeProvider
+               .when('/inbox', {
+                    templateUrl: 'views/inbox.html',
+                    controller: 'InboxCtrl',
+                    controllerAs: 'Inbox'
+               })
+               .when('/inbox/email/:id', {
+                    templateUrl: 'views/email.html',
+                    controller: 'EmailCtrl',
+                    controllerAs: 'email'
+               }).
+               otherwise({
+                redirectTo: '/inbox'
+               });
+            });
         </script>
     </body>
 </html>
